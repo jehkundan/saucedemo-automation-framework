@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK-25'           // ✅ Set this to the name of your JDK in Jenkins (Manage Jenkins → Global Tool Configuration)
-        maven 'Maven'          // ✅ Set this to your Maven installation name in Jenkins
+        jdk 'JDK25'          // Must match Global Tool name exactly
+        maven 'Maven3'       // Must match Global Tool name exactly
     }
 
     triggers {
-        cron('0 10 * * *')     // 🕙 Run every day at 10:00 AM
+        cron('0 10 * * *')   // Run every day at 10:00 AM
     }
 
     stages {
@@ -20,28 +20,23 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                echo '🧪 Running Maven Tests...'
+                echo '🧪 Running Maven tests...'
                 sh 'mvn clean test'
             }
         }
 
         stage('Allure Report') {
             steps {
-                echo '📊 Generating Allure Report...'
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                echo '📊 Generating Allure report...'
+                allure includeProperties: false, results: [[path: 'allure-results']]
             }
         }
     }
 
     post {
-        success {
-            echo '✅ Build completed successfully!'
-        }
-        failure {
-            echo '❌ Build failed. Check logs and reports.'
-        }
-        always {
-            echo '📌 Pipeline finished.'
-        }
+        success { echo '✅ Build succeeded' }
+        failure { echo '❌ Build failed — check console & Allure' }
+        always  { echo '📌 Pipeline finished' }
     }
 }
+
