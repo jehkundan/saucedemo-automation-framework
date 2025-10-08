@@ -6,9 +6,6 @@ pipeline {
         maven 'Maven3'       // Must match Global Tool name exactly
     }
 
-    triggers {
-        cron('0 10 * * *')   // Run every day at 10:00 AM
-    }
 
     stages {
         stage('Checkout') {
