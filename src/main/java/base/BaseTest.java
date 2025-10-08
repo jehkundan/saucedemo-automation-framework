@@ -10,7 +10,7 @@ import org.testng.annotations.*;
         protected WebDriver driver;
 
         @Parameters({"browser"})
-        @BeforeMethod(alwaysRun = true)
+        @BeforeClass(alwaysRun = true)
         public void setUp(@Optional String browser) {
             String b = browser != null ? browser : Config.get("browser");
             boolean headless = Boolean.parseBoolean(Config.get("headless"));
@@ -19,7 +19,7 @@ import org.testng.annotations.*;
             driver.get(Config.get("base.url"));
         }
 
-        @AfterMethod(alwaysRun = true)
+        @AfterClass(alwaysRun = true)
         public void tearDown() {
             DriverFactory.quit();
         }

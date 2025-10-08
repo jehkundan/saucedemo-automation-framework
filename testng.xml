@@ -10,7 +10,7 @@
     <test name="Smoke-Chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.E2E_SmokeTest"/>
+            <class name="tests.E2E_Smoke_Testing"/>
         </classes>
     </test>
 
