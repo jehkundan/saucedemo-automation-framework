@@ -1,9 +1,10 @@
 package tests;
+
 import base.BaseTest;
-import pages.*;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.*;
 
 import java.util.ArrayList;
 import java.util.Collections;

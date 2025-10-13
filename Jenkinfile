@@ -15,10 +15,10 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
+        stage('Build & tests') {
             steps {
                 echo '🧪 Running Maven tests...'
-                sh 'mvn clean test'
+                sh 'mvn clean tests'
             }
         }
 

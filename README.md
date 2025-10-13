@@ -1,4 +1,4 @@
-Sample Test Scenarios Automated
+Sample tests Scenarios Automated
 
 ✅ Login with valid credentials
 
@@ -16,7 +16,7 @@ Keeps tests clean and easy to maintain
 
 📝 Allure Reporting Example
 
-Each test is annotated with @Epic, @Feature, @Story, and @Severity for clear reporting.
+Each tests is annotated with @Epic, @Feature, @Story, and @Severity for clear reporting.
 
 Failed tests automatically show stack trace and steps in the report.
 
@@ -37,7 +37,7 @@ Screenshots can be attached on failure (optional enhancement).
 👨‍💻 Author
 
 Kundan Kumar
-💼 Test Automation Engineer
+💼 tests Automation Engineer
 
 📧 Linkdin: https://www.linkedin.com/in/kundanaryakd/
 
