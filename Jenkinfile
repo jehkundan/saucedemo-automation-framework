@@ -18,7 +18,7 @@ pipeline {
         stage('Build & tests') {
             steps {
                 echo '🧪 Running Maven tests...'
-                sh 'mvn clean tests'
+                sh 'mvn clean test'
             }
         }
 
