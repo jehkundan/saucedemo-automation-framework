@@ -6,6 +6,10 @@ pipeline {
         maven 'Maven3'       // Must match Global Tool name exactly
     }
 
+    triggers {
+            cron('H/5 * * * *')         // 🔁 Run every 5 minutes (safe hashed version)
+        }
+
 
     stages {
         stage('Checkout') {
