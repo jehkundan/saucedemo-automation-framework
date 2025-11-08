@@ -5,10 +5,7 @@ pipeline {
         jdk 'JDK25'          // Must match Global Tool name exactly
         maven 'Maven3'       // Must match Global Tool name exactly
     }
-
-    triggers {
-            cron('H/5 * * * *')         // 🔁 Run every 5 minutes (safe hashed version)
-        }
+    triggers { cron('H/5 * * * *') }
 
 
     stages {
