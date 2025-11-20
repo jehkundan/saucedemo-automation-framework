@@ -5,7 +5,7 @@ pipeline {
         jdk 'JDK25'          // Must match Global Tool name exactly
         maven 'Maven3'       // Must match Global Tool name exactly
     }
-    triggers { cron('0 9 * * *') }
+    triggers { cron('H 9 * * *') }
 
 
     stages {
